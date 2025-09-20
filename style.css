@@ -1,0 +1,317 @@
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+
+ /* Reset some default browser styles */
+ *,
+ *::before,
+ *::after {
+                     box-sizing: border-box;
+                     margin: 0;
+                     padding: 0;
+                     transition: 0.2s;
+                     font-family: "Nunito Sans", sans-serif;
+
+ }
+
+ /* Set base font and background */
+
+
+ /* Responsive images */
+ img {
+                     max-width: 100%;
+                     height: auto;
+                     display: block;
+ }
+
+ /* Links */
+ a {
+                     color: inherit;
+                     text-decoration: none;
+ }
+
+ /* Headings */
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+                     font-weight: 600;
+                     margin-bottom: 0em;
+ }
+
+
+ h1 {
+                     font-size: 20px;
+ }
+
+ p {
+                     color: hsl(0, 36%, 70%)
+ }
+
+
+
+ :root {
+                     /* Light mode colors */
+                     --background-color: #ffffff;
+                     --text-color: #333333;
+                     --primary-color: hsl(3, 77%, 44%);
+                     --header-bg-color: #eeeeee;
+                     --card-bg-color: #f9f9f9;
+                     --shadow-color: rgba(0, 0, 0, 0.1);
+                     --border-color: hsl(0, 0%, 78%);
+                     --body-background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+                     --btn-bg: hsl(0, 0%, 93%);
+
+                     --logo-color: #091540;
+
+ }
+
+ body.dark-theme {
+                     /* Dark mode colors */
+                     --background-color: hsl(226, 25%, 17%);
+                     --text-color: #e0e0e0;
+                     --primary-color: hsl(3, 77%, 44%);
+                     --header-bg-color: #1e1e1e;
+                     --card-bg-color: #1e1e1e;
+                     --shadow-color: rgba(255, 255, 255, 0.1);
+                     --border-color: #444444;
+                     --btn-bg: hsl(225, 23%, 24%);
+
+                     --body-background: linear-gradient(180deg, #040918 0%, #091540 100%);
+                     --logo-color: #fff;
+ }
+
+ body {
+                     /* font-family: 'Segoe UI', Arial, sans-serif; */
+                     font-size: 16px;
+                     line-height: 1.5;
+                     background: var(--body-background);
+                     color: var(--text-color);
+                     width: 100%;
+                     font-family: "Nunito Sans", sans-serif;
+                     transition: 0.4s;
+                     align-items: center;
+
+
+ }
+
+ .toggle-container {
+                     display: inline-block;
+                     position: relative;
+                     cursor: pointer;
+ }
+
+ .toggle-checkbox {
+                     /* Hide the default checkbox input */
+                     display: none;
+ }
+
+ .toggle-label {
+                     display: flex;
+                     align-items: center;
+                     width: 60px;
+                     height: 30px;
+                     background-color: #ccc;
+                     border-radius: 30px;
+                     position: relative;
+                     transition: background-color 0.3s;
+ }
+
+ .toggle-ball {
+                     width: 26px;
+                     height: 26px;
+                     background-color: #fff;
+                     border-radius: 50%;
+                     position: absolute;
+                     left: 2px;
+                     transition: transform 0.3s;
+ }
+
+ /* Style for the 'on' state */
+ .toggle-checkbox:checked+.toggle-label {
+                     background-color: var(--primary-color);
+ }
+
+ .toggle-checkbox:checked+.toggle-label .toggle-ball {
+                     transform: translateX(30px);
+ }
+
+
+
+
+ /* === Toggle Switch for each ext === */
+ .switch {
+                     position: relative;
+                     display: inline-block;
+                     width: 45px;
+                     height: 24px;
+ }
+
+ .switch input {
+                     opacity: 0;
+                     width: 0;
+                     height: 0;
+ }
+
+ .slider {
+                     position: absolute;
+                     cursor: pointer;
+                     top: 0;
+                     left: 0;
+                     right: 0;
+                     bottom: 0;
+                     background-color: #ccc;
+                     transition: 0.4s;
+                     border-radius: 26px;
+ }
+
+ .slider::before {
+                     position: absolute;
+                     content: "";
+                     height: 20px;
+                     width: 20px;
+                     left: 3px;
+                     bottom: 0px;
+                     top: 0;
+                     margin: auto;
+                     background-color: white;
+                     transition: 0.4s;
+                     border-radius: 50%;
+ }
+
+ /* When checked */
+ .switch input:checked+.slider {
+                     background-color: var(--primary-color);
+ }
+
+ .switch input:checked+.slider::before {
+                     transform: translateX(19px);
+ }
+
+
+
+ .extensionsCont {
+                     max-width: 930px;
+                     margin: 40px auto;
+                     padding: 32px 24px;
+                     border-radius: 18px
+ }
+
+ .ext-container {
+                     display: flex;
+                     flex-wrap: wrap;
+                     padding: 0;
+                     /* background-color: blue; */
+                     justify-content: space-between;
+ }
+
+ .headTitles {
+                     display: flex;
+                     justify-content: space-between;
+                     padding: 25px 0px 25px 0px;
+ }
+
+ button {
+                     background-color: var(--btn-bg);
+                     border-radius: 20px;
+                     cursor: pointer;
+                     padding: 6px 14px;
+                     border: solid 1px var(--border-color);
+                     color: var(--text-color);
+                     outline: none;
+ }
+
+
+ .tool {
+                     background-color: var(--background-color);
+                     display: flex;
+                     flex-direction: column;
+                     gap: 25px;
+                     width: 30%;
+                     min-width: 285px;
+                     height: 160px;
+                     border-radius: 10px;
+                     justify-content: space-between;
+                     margin-bottom: 13px;
+                     padding: 10px;
+                     border: solid 1px var(--border-color);
+ }
+
+
+ .tool-header {
+                     display: flex;
+                     justify-content: space-between;
+                     align-items: center;
+
+ }
+
+
+
+ .ext-Main-headerx {
+                     width: 100%;
+                     display: flex;
+                     justify-content: space-between;
+                     align-items: center;
+                     background-color: var(--background-color);
+                     padding: 10px;
+                     border-radius: 10px;
+
+ }
+
+
+ .logo {
+                     display: flex;
+                     align-items: center;
+                     width: 100%;
+                     /* background-color: red; */
+ }
+
+ .logo svg {
+                     width: 140px;
+ }
+
+ .logoIcon {
+                     /* background-color: red; */
+                     background-position: center;
+                     background-repeat: no-repeat;
+                     height: 45px;
+                     background-image: url(assets/images/logox.svg);
+                     width: 150px;
+                     background-size: 100%
+ }
+
+
+ .toolImg {
+                     height: 50px;
+                     width: 50px;
+                     background-size: contain;
+                     display: block;
+                     background-repeat: no-repeat;
+                     background-position: center;
+ }
+
+ .tool-content {
+                     width: calc(100% - 70px);
+ }
+
+ .descDiv {
+                     font-size: 12px;
+                     font-weight: 100;
+                     line-height: normal;
+ }
+
+ .mainInner {
+                     display: flex;
+                     gap: 10px;
+ }
+
+ .remove-btn {
+                     background-color: transparent;
+                     border-radius: 20px;
+                     cursor: pointer;
+                     padding: 6px 14px;
+                     border: solid 1px var(--border-color);
+                     color: var(--text-color);
+ }
