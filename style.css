@@ -92,11 +92,13 @@
                      width: 100%;
                      font-family: "Nunito Sans", sans-serif;
                      transition: 0.4s;
+                     min-height: 100vh;
                      align-items: center;
 
 
  }
 
+ /* 
  .toggle-container {
                      display: inline-block;
                      position: relative;
@@ -104,10 +106,12 @@
  }
 
  .toggle-checkbox {
-                     /* Hide the default checkbox input */
+                   
                      display: none;
- }
-
+ } 
+ 
+ */
+ /* 
  .toggle-label {
                      display: flex;
                      align-items: center;
@@ -127,18 +131,29 @@
                      position: absolute;
                      left: 2px;
                      transition: transform 0.3s;
- }
+ } */
 
  /* Style for the 'on' state */
- .toggle-checkbox:checked+.toggle-label {
+ /* .toggle-checkbox:checked+.toggle-label {
                      background-color: var(--primary-color);
  }
 
  .toggle-checkbox:checked+.toggle-label .toggle-ball {
                      transform: translateX(30px);
+ } */
+
+
+
+ .themeToggle {
+                     background-size: 40%;
+                     background-position: center;
+                     background-repeat: no-repeat;
+                     height: 45px;
+                     background-color: var(--shadow-color);
+                     border-radius: 10px;
+                     width: 45px;
+                     cursor: pointer;
  }
-
-
 
 
  /* === Toggle Switch for each ext === */
@@ -204,7 +219,10 @@
                      flex-wrap: wrap;
                      padding: 0;
                      /* background-color: blue; */
-                     justify-content: space-between;
+                     overflow: hidden;
+                     position: relative;
+                     align-items: center;
+                     gap: 10px;
  }
 
  .headTitles {
@@ -239,6 +257,15 @@
                      border: solid 1px var(--border-color);
  }
 
+ .hide {
+                     position: absolute;
+                     transform: translateX(-100%);
+ }
+
+ .show {
+                     position: relative;
+                     transform: translateX(0%);
+ }
 
  .tool-header {
                      display: flex;

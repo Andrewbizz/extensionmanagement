@@ -58,20 +58,26 @@
           Extension -->
         </div>
         <div class="themeTog">
-          <div class="toggle-container">
-            <input type="checkbox" id="theme-toggle" class="toggle-checkbox" />
-            <label for="theme-toggle" class="toggle-label">
-              <span class="toggle-ball"></span>
+          <div id="theme-toggle" class="themeToggle"></div>
+
+          <!-- <div class="toggle-container">
+            <div
+              id="theme-toggle"
+              class="toggle-checkbox"
+              style="height: 50px; width: 50px; background-color: red"
+            ></div> 
+            <label for="theme-toggle" class="toggle-label"> 
+            <span class="toggle-ball"></span>
             </label>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="headTitles">
         <h2>Extensions List</h2>
         <div>
-          <button type="button">All</button>
-          <button type="button">Active</button>
-          <button type="button">Inactive</button>
+          <button type="button" id="showAll">All</button>
+          <button type="button" id="showActive">Active</button>
+          <button type="button" id="showInactive">Inactive</button>
         </div>
       </div>
       <div id="ext-container" class="ext-container"></div>
