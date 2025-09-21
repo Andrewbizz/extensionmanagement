@@ -150,13 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
       toolDiv.classList.toggle("active", toggle.checked);
       toolDiv.classList.toggle("inactive", !toggle.checked);
 
-      if (
-        sortState === 1 ||
-        (sortState === 2 && toolDiv.classList.contains("inactive"))
-      ) {
+      if (sortState === 2 && toolDiv.classList.contains("inactive")) {
         toolDiv.classList.add("hide");
         toolDiv.classList.remove("show");
-      } else {
+      } else if (sortState === 3) {
         toolDiv.classList.add("hide");
         toolDiv.classList.remove("show");
       }
@@ -197,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const childDiv = container.querySelectorAll(":scope > div.tool");
   const allSwitches = container.querySelectorAll(".switch");
+  const filterBtn = document.querySelectorAll(".filBtn");
   const showAll = document.getElementById("showAll");
   const showActive = document.getElementById("showActive");
   const showInactive = document.getElementById("showInactive");
@@ -250,6 +248,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   allSwitches.forEach((swit) => {
     swit.addEventListener("click", stateSetter());
+  });
+
+  filterBtn.forEach((btn) => {
+    //     const isCurrent = btn.classList.contains("current");
+    btn.addEventListener("click", () => {
+      filterBtn.forEach((btnn) => {
+        btnn.classList.remove("current");
+      });
+
+      event.target.classList.add("current");
+    });
   });
 
   showAll.addEventListener("click", showAllfn);
