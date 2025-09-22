@@ -199,6 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const showActive = document.getElementById("showActive");
   const showInactive = document.getElementById("showInactive");
 
+  let toolCount = document.querySelectorAll("active").length;
+
   const stateSetter = function () {
     if (sortState === 1) {
       childDiv.forEach((child) => {
@@ -220,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
       childDiv.forEach((child) => {
         if (child.classList.contains("inactive")) {
           child.classList.add("show");
+          child.classList.remove("hide");
         } else {
           child.classList.add("hide");
           child.classList.remove("show");
@@ -231,19 +234,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const showAllfn = function () {
     sortState = 1;
     stateSetter();
-    console.log(sortState);
   };
 
   const showActivefn = function () {
     sortState = 2;
     stateSetter();
-    console.log(sortState);
   };
 
   const showInactivefn = function () {
     sortState = 3;
     stateSetter();
-    console.log(sortState);
   };
 
   allSwitches.forEach((swit) => {
@@ -264,5 +264,4 @@ document.addEventListener("DOMContentLoaded", () => {
   showAll.addEventListener("click", showAllfn);
   showActive.addEventListener("click", showActivefn);
   showInactive.addEventListener("click", showInactivefn);
-  console.log(sortState);
 });
